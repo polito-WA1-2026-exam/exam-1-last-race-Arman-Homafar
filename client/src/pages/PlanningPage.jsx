@@ -144,8 +144,8 @@ function PlanningPage() {
       <aside className="planning-side">
         <div className="section-heading-row">
           <div>
-            <h2>Available segments</h2>
-            <p className="muted small-text">Only segments connected to the current station are enabled.</p>
+            <h2>All segments</h2>
+            <p className="muted small-text">Select any segment to build your route.</p>
           </div>
           <button type="button" className="button primary compact" onClick={handleSubmit} disabled={submitting}>
             <Send size={17} aria-hidden="true" />
