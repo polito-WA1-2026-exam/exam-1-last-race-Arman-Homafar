@@ -55,12 +55,12 @@ The server creates and seeds `server/last-race.sqlite` automatically at startup 
 
 ## Server Database Files
 
-- `server/db.js`: small public export file used by `index.js`.
-- `server/db/connection.js`: opens SQLite and enables foreign keys.
-- `server/db/schema.js`: creates the database tables.
-- `server/db/seed.js`: inserts users, network data, events, and seeded completed games.
-- `server/db/helpers.js`: user lookups, network APIs, game creation, validation, execution, and ranking.
-- `server/db/passwords.js`: password hashing and password verification.
+- `server/db.js`: thin re-export used by `index.js`; surfaces all public helpers, `initDatabase`, and `verifyPassword`.
+- `server/db/connection.js`: opens the SQLite file and enables foreign keys; exports `getDb()`.
+- `server/db/passwords.js`: `hashPassword()` and `verifyPassword()` using `crypto.scryptSync`.
+- `server/db/schema.js`: `createSchema(db)` — issues `CREATE TABLE IF NOT EXISTS` for all tables.
+- `server/db/seed.js`: `initDatabase()` — runs schema creation then seeds users, network, events, and completed games if the database is empty.
+- `server/db/helpers.js`: user lookups, network queries, game creation, route validation, execution, and ranking.
 
 ## Main React Components
 
