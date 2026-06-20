@@ -1,4 +1,5 @@
 node_modules/
+last-race.sqlite
 .DS_Store
 Desktop.ini
 Thumbs.db
