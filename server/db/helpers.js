@@ -1,5 +1,6 @@
 import { getDb } from './connection.js';
-import { INITIAL_COINS } from './constants.js';
+
+const INITIAL_COINS = 20;
 
 export async function getUserByUsername(username) {
   const db = await getDb();
